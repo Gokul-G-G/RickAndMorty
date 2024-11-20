@@ -45,16 +45,18 @@ const RickAndMortar = () => {
         <option value="episode">Episode</option>
         <option value="location">Location</option>
       </select>
-      {/* Display Fetched data in cards */}
-      <div className="cards-container">
+      {/* Display Fetched data in cards using list*/}
+      <ul className="cards-list">
         {items.length > 0 ? (
           items.map((item) => (
-            <Card key={item.id} item={item} dataType={dataType} />
+            <li key={item.id} className="card-item">
+              <Card item={item} dataType={dataType} />
+            </li>
           ))
         ) : (
           <p>No data available</p>
         )}
-      </div>
+      </ul>
     </div>
   );
 };
